@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Productos } from '../tienda/Producto';
-import {Pedido} from '../carro/pedido';
+import { Productos } from '../models/Producto';
+import {Pedido} from '../models/pedido';
 
 
 const URL = "http://localhost:3000/productos";

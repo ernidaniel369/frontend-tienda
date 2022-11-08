@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import {CarroComponent} from './carro/carro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PagoComponent } from './pago/pago.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     TiendaComponent,
-    CarroComponent
+    CarroComponent,
+    PagoComponent
   ],
   imports: [
     BrowserModule,

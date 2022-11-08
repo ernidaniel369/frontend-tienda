@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website with a contact Form 01</title>
+    <link rel="stylesheet" href="">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="logo">Formulario de <span>Pago</span></h1>
+        <div class="contact-wrapper animated bounceInUp">
+            <div class="contact-form">
+                <form action="">
+                    <p>
+                        <label>Nombre y Apellido</label>
+                        <input type="text" name="fullname">
+                    </p>
+                    <p>
+                        <label>Email</label>
+                        <input type="email" name="email">
+                    </p>
+                    <p>
+                        <label>N° Celular</label>
+                        <input type="tel" name="phone">
+                    </p>
+                    <p>
+                        <label>Provincia</label>
+                        <input type="text" name="affair">
+                    </p>
+                    <p>
+                        <label>Ciudad</label>
+                        <input type="text" name="fullname">
+                    </p>
+                    <p>
+                        <label>Dirección</label>
+                        <input type="text" name="email">
+                    </p>
+                    <p>
+                        <label>Codigo Postal</label>
+                        <input type="tel" name="phone">
+                    </p>
+                    
+                    <p class="block">
+                        
+                        <button class="btn btn-danger fs-4 fw-bold shadow" (click)="descuento()">Pagar</button>
+                    </p>
+                </form>
+            </div>
+            <div class="contact-info">
+                <!-- <h4>Informe de pedido</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Baker Street</li>
+                    <li><i class="fas fa-phone"></i> (111) 111 111 111</li>
+                    <li><i class="fas fa-envelope-open-text"></i> contact@website.com</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero provident ipsam necessitatibus repellendus?</p>
+                <p>Company.com</p> -->
+                <h4>Informe de pedido</h4>
+                <table class="table table-danger shadow">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio Unitario</th>
+                            <th Scope="col">Total por Producto</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <ng-container *ngFor="let productos of productos">
+                            <tr>
+                                <td *ngIf="productos.quantity > 0"> {{productos.nombre}}</td>
+                                <td class="text-center" *ngIf="productos.quantity > 0">{{productos.quantity}}</td>
+                                <td class="text-center" *ngIf="productos.quantity > 0"> $ {{productos.precio}}</td>
+                                <td class="text-center" *ngIf="productos.quantity > 0"> $ {{productos.precio*productos.quantity}}</td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

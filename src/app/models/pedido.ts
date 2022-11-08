@@ -4,5 +4,10 @@ export interface Pedido {
     quantity: number;
     clientName: string;
     email: string;
-    address: string;
+    celular: number;
+    provincia: string;
+    ciudad: string;
+    Cpostal: number;
+    direccion: string;
+    usuarioIp: string;
 }

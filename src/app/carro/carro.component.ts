@@ -1,9 +1,9 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { ProductoCartService } from '../services/producto-cart.service';
-import { Productos } from '../tienda/Producto';
+import { Productos } from '../models/Producto';
 import { ProductoDataService } from '../services/producto-data.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import {Pedido} from './pedido';
+import {Pedido} from '../models/pedido';
 
 
 
@@ -22,17 +22,6 @@ export class CarroComponent implements OnInit {
     cantidad: 0,
     quantity: 0
   }
-  pedido: Pedido = {
-    id: 0,
-    id_producto: 0,
-    quantity: 0,
-    clientName: '',
-    email: '',
-    address: ''
-
-  }
-
-
   
   constructor(private productoCartService: ProductoCartService, private productoDataService: ProductoDataService, private router: Router) { }
 
@@ -48,35 +37,6 @@ export class CarroComponent implements OnInit {
     });
     return sum;
   }
-
-  
-
-  descuento() {
-  this.productos.forEach(descuento => {
-    this.produc.quantity = descuento.quantity;
-    this.produc.id = descuento.id;
-    this.pedido.id_producto = descuento.id;
-    this.pedido.quantity = descuento.quantity;
-    this.productoDataService.descuento(this.produc.id, this.produc).subscribe(
-      res => { 
-        console.log(res);
-        
-      },
-      err => console.error(err)
-    );
-    //esto es para generar y guardar el pedido, falta la informacion del comprador 
-    /* this.productoDataService.pedido(this.pedido).subscribe(
-      res => {
-        console.log(res);
-      },
-      err => console.error(err)
-    ) */
-    console.log(this.produc);
-    
-    location.reload();
-    
-  });
-}
   
 
 }
