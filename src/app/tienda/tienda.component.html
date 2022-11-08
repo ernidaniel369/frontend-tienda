@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <h1 class="m-3"> Tienda Online de Henares Soluciones Energéticas Renovables</h1>
+    <div class="d-flex">
+        <div class="col-lg-8">
+            <table class="table m-1 table-success text-center table-striped shadow">
+                <thead>
+                <tr class="table-success ">
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Cantidad</th>
+                </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                <ng-container *ngFor="let productos of productos">
+                <tr >
+                    <td class="col-lg-3 text-center"><img [src]="productos.imagen" class="w-75" alt=""></td>
+                    <td class="col-lg-2">{{productos.nombre}}</td>
+                    <td class="col-lg-3">{{productos.descripcion}}</td>
+                    <td class="col-lg-2">$ {{productos.precio}}</td>
+                    <td class="col-lg-2" *ngIf="productos.cantidad > 0">{{productos.cantidad}}</td>
+                    <td class="col-lg-2"*ngIf="productos.cantidad == 0">Sin Stock</td>
+                    <td class="col-lg-2">
+                    <div class=" d-flex">
+                        <button type="button" class="btn btn-sm btn-light me-1" (click)="downQuantity(productos)">-</button>
+                        <span class="m-2">{{productos.quantity}}</span>
+                        <button type="button" class="btn btn-sm btn-light" (click)="upQuantity(productos)" >+</button>
+                    </div>
+                    </td>
+                </tr>
+                </ng-container>   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <app-carro></app-carro>
+    </div>
+</div>
+
+
+
+
+

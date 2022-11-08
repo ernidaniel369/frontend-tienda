@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg bg-light shadow">
+    <div class="container-fluid">
+      <img src="../../assets/Logo Henares.jpg" class="logo mx-4 shadow-sm col-sm-12" alt="">
+
+      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
+        <div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['home']">Nosotros</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Nuestro Trabajo
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">trabajo1</a></li>
+                        <li><a class="dropdown-item" href="#">trabajo2</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">trabajos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['tienda']" >Tienda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <form class="d-flex " role="search">
+          <input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <div class="login me-2">
+            <button type="button" class="btn btn-primary" onclick="location.href='http://localhost:5000/login'"><i class="fa-solid fa-user"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
